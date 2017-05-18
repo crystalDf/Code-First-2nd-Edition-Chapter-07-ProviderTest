@@ -34,10 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
                 ContentValues contentValues = new ContentValues();
 
-                contentValues.put(DatabaseContract.COLUMN_NAME, "A Clash of Kings");
-                contentValues.put(DatabaseContract.COLUMN_AUTHOR, "George Martin");
-                contentValues.put(DatabaseContract.COLUMN_PAGES, 1040);
-                contentValues.put(DatabaseContract.COLUMN_PRICE, 22.85);
+                contentValues.put(DatabaseContract.BOOK_COLUMN_NAME, "A Clash of Kings");
+                contentValues.put(DatabaseContract.BOOK_COLUMN_AUTHOR, "George Martin");
+                contentValues.put(DatabaseContract.BOOK_COLUMN_PAGES, 1040);
+                contentValues.put(DatabaseContract.BOOK_COLUMN_PRICE, 22.85);
 
                 Uri newUri = getContentResolver().insert(uri, contentValues);
 
@@ -55,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
                 ContentValues contentValues = new ContentValues();
 
-                contentValues.put(DatabaseContract.COLUMN_NAME, "A Storm of Swords");
-                contentValues.put(DatabaseContract.COLUMN_PAGES, 1216);
-                contentValues.put(DatabaseContract.COLUMN_PRICE, 24.05);
+                contentValues.put(DatabaseContract.BOOK_COLUMN_NAME, "A Storm of Swords");
+                contentValues.put(DatabaseContract.BOOK_COLUMN_PAGES, 1216);
+                contentValues.put(DatabaseContract.BOOK_COLUMN_PRICE, 24.05);
 
                 getContentResolver().update(uri, contentValues, null, null);
             }
@@ -86,13 +86,13 @@ public class MainActivity extends AppCompatActivity {
                     while (cursor.moveToNext()) {
 
                         String name = cursor.getString(cursor.getColumnIndex(
-                                DatabaseContract.COLUMN_NAME));
+                                DatabaseContract.BOOK_COLUMN_NAME));
                         String author = cursor.getString(cursor.getColumnIndex(
-                                DatabaseContract.COLUMN_AUTHOR));
+                                DatabaseContract.BOOK_COLUMN_AUTHOR));
                         int pages = cursor.getInt(cursor.getColumnIndex(
-                                DatabaseContract.COLUMN_PAGES));
+                                DatabaseContract.BOOK_COLUMN_PAGES));
                         double price = cursor.getDouble(cursor.getColumnIndex(
-                                DatabaseContract.COLUMN_PRICE));
+                                DatabaseContract.BOOK_COLUMN_PRICE));
 
                         Log.d(TAG, "Book name is " + name);
                         Log.d(TAG, "Book author is " + author);
