@@ -22,5 +22,4 @@ public final class DatabaseContract {
     public static final Uri AUTHORITY_URI = Uri.parse("content://" + AUTHORITY);
     public static final Uri BOOK_CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI,
             TABLE_BOOK_NAME.toLowerCase());
-
 }
